@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -23,4 +25,6 @@ public class DepartmentEntity {
     @JoinColumn(name = "departments_manager")
     private EmployeeEntity manager;
 
+    @OneToMany(mappedBy = "workerDepartment")
+    private Set<EmployeeEntity>  workers;
 }

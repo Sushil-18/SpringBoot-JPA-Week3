@@ -21,4 +21,8 @@ public class EmployeeEntity {
 
     @OneToOne(mappedBy = "manager")
     private DepartmentEntity manageDepartment;
+
+    @ManyToOne
+    @JoinColumn(name = "worker_department_id", referencedColumnName = "id")
+    private DepartmentEntity workerDepartment;
 }
